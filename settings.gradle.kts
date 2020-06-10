@@ -1,9 +1,8 @@
-include(":buildSrc")
 rootProject.name = "BaseDemo"
 
 include(
-    ":common",
+    ":shared",
     ":data",
-    ":domain",
-    ":presentation"
+    ":presentation",
+    ":domain"
 )
