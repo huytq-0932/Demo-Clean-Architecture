@@ -3,6 +3,7 @@ plugins {
     id(Plugins.kotlinAndroid)
     id(Plugins.kotlinAndroidExt)
     id(Plugins.kotlinApt)
+    id(Plugins.navigationSafeArgs)
 }
 
 android {
@@ -23,6 +24,9 @@ android {
     compileOptions {
         sourceCompatibility = AndroidSettings.sourceCompatibility
         targetCompatibility = AndroidSettings.targetCompatibility
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 
     flavorDimensions("appVariant")
@@ -48,7 +52,7 @@ android {
             isDebuggable = true
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-Debug"
-            //          signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.getByName("debug")
             resValue("string", "app_name", "app_name - Debug")
         }
         getByName("release") {
@@ -70,10 +74,6 @@ android {
         isExperimental = true
     }
 
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "1.8"
-    }
-
     dataBinding {
         isEnabled = true
     }
@@ -90,10 +90,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":common"))
-    implementation(project(":data"))
-    implementation(project(":domain"))
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation(project(":shared"))
+    implementation(project(":data"))
 
     implementation(Dependencies.appCompat)
     implementation(Dependencies.cardView)
@@ -103,6 +102,10 @@ dependencies {
     implementation(Dependencies.koinViewModel)
     implementation(Dependencies.kotlinStdLib)
     implementation(Dependencies.materialDesign)
+    implementation(Dependencies.navigationFragment)
+    implementation(Dependencies.navigationUi)
+    implementation(Dependencies.navigationFragmentKtx)
+    implementation(Dependencies.navigationUiKtx)
     implementation(Dependencies.recyclerView)
 
     testImplementation(TestDependencies.junit)
