@@ -1,4 +1,4 @@
-package com.tr4n.basedemo.base.recyclerview
+package com.tr4n.basedemo.screen.base.recyclerview
 
 interface RecyclerViewItem {
     @setparam: RecyclerType

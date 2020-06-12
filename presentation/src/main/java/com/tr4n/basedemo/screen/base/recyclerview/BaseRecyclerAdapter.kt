@@ -1,4 +1,4 @@
-package com.tr4n.basedemo.base.recyclerview
+package com.tr4n.basedemo.screen.base.recyclerview
 
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.ListAdapter
 
 abstract class BaseRecyclerAdapter<T : RecyclerViewItem, VB : ViewDataBinding, VH : BaseViewHolder<T, VB>>(
     diffUtilCallback: DiffUtil.ItemCallback<T>
-) : ListAdapter<T, VH>(diffUtilCallback) {
+) : ListAdapter<T, VH>(diffUtilCallback), BindableAdapter<T> {
 
     @LayoutRes
     abstract fun getItemLayoutResource(viewType: Int): Int
@@ -22,6 +22,10 @@ abstract class BaseRecyclerAdapter<T : RecyclerViewItem, VB : ViewDataBinding, V
 
     override fun submitList(list: MutableList<T>?) {
         super.submitList(list ?: emptyList())
+    }
+
+    override fun setItems(items: List<T>) {
+        submitList(items.toMutableList())
     }
 
     protected fun getViewHolderDataBinding(parent: ViewGroup, viewType: Int): ViewDataBinding =

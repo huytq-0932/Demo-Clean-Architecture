@@ -1,4 +1,4 @@
-package com.tr4n.basedemo.base
+package com.tr4n.basedemo.screen.base
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes
@@ -7,7 +7,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
-
+/**
+ * @author tr4n
+ */
 abstract class BaseActivity<VB : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity() {
 
     @get:LayoutRes
@@ -28,15 +30,10 @@ abstract class BaseActivity<VB : ViewDataBinding, VM : BaseViewModel> : AppCompa
         viewDataBinding = DataBindingUtil.setContentView(this, layoutResource)
     }
 
-    protected open fun setBindingVariables(){
+    protected open fun setBindingVariables() {
     }
 
     protected abstract fun initComponents()
 
     protected abstract fun observeData()
-
-    protected fun replaceFragment(id: Int, fragment: Fragment, addToBackStack: Boolean) =
-        supportFragmentManager.beginTransaction().replace(id, fragment).apply {
-            if (addToBackStack) addToBackStack(null)
-        }.commit()
 }

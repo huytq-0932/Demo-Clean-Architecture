@@ -1,10 +1,9 @@
-package com.tr4n.basedemo.base
+package com.tr4n.basedemo.screen.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -12,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.tr4n.shared.extension.showSnackBar
 import com.tr4n.shared.extension.showToast
-import java.net.HttpURLConnection
 
 
 abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel> : Fragment() {

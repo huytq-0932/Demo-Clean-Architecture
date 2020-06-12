@@ -1,7 +1,7 @@
 package com.tr4n.basedemo.screen.favorite
 
 import com.tr4n.basedemo.R
-import com.tr4n.basedemo.base.BaseFragment
+import com.tr4n.basedemo.screen.base.BaseFragment
 import com.tr4n.basedemo.databinding.FragmentExploreBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

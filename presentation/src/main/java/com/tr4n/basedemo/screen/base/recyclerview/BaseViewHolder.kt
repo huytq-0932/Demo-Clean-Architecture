@@ -1,4 +1,4 @@
-package com.tr4n.basedemo.base.recyclerview
+package com.tr4n.basedemo.screen.base.recyclerview
 
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView

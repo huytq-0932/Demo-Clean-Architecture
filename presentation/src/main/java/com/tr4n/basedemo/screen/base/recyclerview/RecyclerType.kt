@@ -1,5 +1,4 @@
-/* gkc_hash_code : 01DN6FJSFFGTXH1JEW3NGB0MX5 */
-package com.tr4n.basedemo.base.recyclerview
+package com.tr4n.basedemo.screen.base.recyclerview
 
 import androidx.annotation.IntDef
 
