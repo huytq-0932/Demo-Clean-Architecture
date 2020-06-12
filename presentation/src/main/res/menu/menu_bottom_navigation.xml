@@ -3,19 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/fragmentHome"
-        android:enabled="true"
         android:icon="@drawable/selector_ic_home"
         android:title="@string/title_home"
         app:showAsAction="ifRoom|withText" />
     <item
         android:id="@+id/fragmentExplore"
-        android:enabled="true"
         android:icon="@drawable/selector_ic_explore"
         android:title="@string/title_explore"
         app:showAsAction="ifRoom|withText" />
     <item
         android:id="@+id/fragmentFavorite"
-        android:enabled="true"
         android:icon="@drawable/selector_ic_favorite"
         android:title="@string/title_favorite"
         app:showAsAction="ifRoom|withText" />
