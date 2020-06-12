@@ -4,6 +4,10 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.tr4n.basedemo.screen.home.HomeViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,12 +17,16 @@
         tools:context="com.tr4n.basedemo.screen.home.HomeFragment">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPhotos"
+            items="@{viewModel.urls}"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="@dimen/dp_2"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_photo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
