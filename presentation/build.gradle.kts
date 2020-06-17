@@ -93,6 +93,7 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":shared"))
     implementation(project(":data"))
+    implementation(project(":domain"))
 
     implementation(Dependencies.appCompat)
     implementation(Dependencies.cardView)
@@ -102,6 +103,9 @@ dependencies {
     implementation(Dependencies.koinCore)
     implementation(Dependencies.koinViewModel)
     implementation(Dependencies.kotlinStdLib)
+    implementation(Dependencies.lifecycleLiveData)
+    implementation(Dependencies.lifecycleRuntimeKtx)
+    implementation(Dependencies.lifecycleViewModelKtx)
     implementation(Dependencies.materialDesign)
     implementation(Dependencies.navigationFragmentKtx)
     implementation(Dependencies.navigationUiKtx)

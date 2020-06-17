@@ -12,7 +12,10 @@ val viewModelModule = module {
         MainViewModel()
     }
     viewModel {
-        HomeViewModel()
+        HomeViewModel(
+            getPhotosUseCase = get(),
+            mapper = get()
+        )
     }
     viewModel {
         ExploreViewModel()

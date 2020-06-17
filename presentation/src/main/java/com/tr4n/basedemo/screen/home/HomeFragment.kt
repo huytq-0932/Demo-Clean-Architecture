@@ -24,6 +24,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     }
 
     override fun initData() {
-        viewModel.getImageUrls()
+        viewModel.getPhotoUrls()
     }
 }
