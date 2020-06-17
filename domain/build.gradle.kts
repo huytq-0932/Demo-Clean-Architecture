@@ -1,8 +1,18 @@
 plugins {
-    `kotlin-dsl`
+    kotlin("jvm")
 }
 
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation(Dependencies.coroutinesCore)
+    implementation(Dependencies.koinCore)
     implementation(Dependencies.kotlinStdLib)
+
+    testImplementation(TestDependencies.assertJ)
+    testImplementation(TestDependencies.junit)
+    testImplementation(TestDependencies.mockk)
+}
+
+java {
+    sourceCompatibility = AndroidSettings.sourceCompatibility
+    targetCompatibility = AndroidSettings.targetCompatibility
 }

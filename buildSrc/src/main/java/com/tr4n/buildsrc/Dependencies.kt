@@ -24,10 +24,10 @@ object Versions {
     const val mockWebServer = "3.14.1"
     const val moshi = "1.8.0"
     const val navigation = "2.3.0-beta01"
-    const val okHttp = "3.14.1"
-    const val retrofit = "2.5.0"
+    const val okHttp = "4.7.2"
+    const val retrofit = "2.9.0"
     const val retrofitCoroutinesAdapter = "0.9.2"
-    const val room = "2.1.0-beta01"
+    const val room = "2.2.5"
     const val testExt = "1.1.1-beta01"
 }
 
@@ -56,6 +56,7 @@ object Dependencies {
         "com.squareup.leakcanary:leakcanary-android-no-op:${Versions.leakCanaryNoop}"
     const val livecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
     const val lifecycleCompiler = "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle}"
+    const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
     const val lifecycleViewModelKtx =
         "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
     const val lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
@@ -75,6 +76,7 @@ object Dependencies {
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val retrofitCoroutinesAdapter =
         "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofitCoroutinesAdapter}"
+    const val retrofitGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     const val retrofitConverterMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
     const val roomKtx = "androidx.room:room-ktx:${Versions.room}"

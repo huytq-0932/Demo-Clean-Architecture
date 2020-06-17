@@ -2,6 +2,7 @@ plugins {
     id(Plugins.androidLibrary)
     id(Plugins.kotlinAndroid)
     id(Plugins.kotlinAndroidExt)
+    id(Plugins.kotlinApt)
 }
 
 android {
@@ -19,6 +20,20 @@ android {
 }
 
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation(project(":shared"))
+    implementation(project(":domain"))
+    implementation(Dependencies.koinCore)
     implementation(Dependencies.kotlinStdLib)
+    implementation(Dependencies.okHttp)
+    implementation(Dependencies.okHttpLoggingInterceptor)
+    implementation(Dependencies.retrofit){
+        exclude(module = "okhttp")
+    }
+    implementation(Dependencies.retrofitCoroutinesAdapter)
+    implementation(Dependencies.retrofitGson)
+
+    kapt(Dependencies.roomCompiler)
+    implementation(Dependencies.roomKtx)
+    implementation(Dependencies.roomRuntime)
+
 }
